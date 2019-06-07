@@ -15,7 +15,18 @@ export class ProfilePage implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private http: HttpClient
-  ) { }
+  ) {
+
+    const userId = localStorage.getItem("user_id");
+    console.log("PROFILE USER ID: ", userId);
+
+    if (userId) {
+      // this.http.get(...);
+    } else {
+      // Navigate to login page
+    }
+
+   }
 
   ngOnInit() {
     this.activatedRoute.queryParamMap.subscribe(

@@ -22,6 +22,9 @@ export class HomePage {
     this.httpClient.post("http://localhost:3000/api/auth", authReq).subscribe(
       (response: any) => {
         const userId = response.id;
+
+        localStorage.setItem("user_id", userId);
+
         // Navigate
         this.navCtrl.navigateForward("profile", {
           queryParams: {
